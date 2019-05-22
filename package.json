@@ -1,0 +1,8 @@
+{
+  "name": "atomic-bomb",
+  "version": "1.0.0-beta.0",
+  "description": "In Loco Atomic CSS ",
+  "main": "index.js",
+  "author": "In Loco Team",
+  "license": "MIT"
+}
