@@ -10,12 +10,27 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^9.5.1",
+    "husky": "^2.3.0",
     "parcel-bundler": "^1.12.3",
     "postcss-import": "^12.0.1",
+    "prettier": "^1.17.1",
     "tailwindcss": "^1.0.1"
   },
   "scripts": {
     "dev": "parcel atomic-bomb.js",
     "build": "parcel build atomic-bomb.js"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "jsxBracketSameLine": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {
+    "pretty-quick": "^1.11.0"
   }
 }
