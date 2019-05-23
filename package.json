@@ -1,11 +1,11 @@
 {
-  "name": "atomic-bomb",
+  "name": "@inloco/atomic-bomb",
   "files": [
     "dist"
   ],
   "main": "./dist/atomic-bomb.js",
   "version": "1.0.0-beta.0",
-  "description": "In Loco Atomic CSS ",
+  "description": "In Loco Atomic CSS",
   "author": "In Loco Team",
   "license": "MIT",
   "devDependencies": {
