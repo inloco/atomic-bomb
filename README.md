@@ -34,5 +34,5 @@ git push origin master --tags
 5. Publish to npm (you'll need to be logged in and have permission on **In Loco** organization):
 
 ```sh
-npm publish
+npm publish --access public
 ```
