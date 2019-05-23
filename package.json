@@ -17,8 +17,8 @@
     "tailwindcss": "^1.0.1"
   },
   "scripts": {
-    "dev": "parcel atomic-bomb.js",
-    "build": "parcel build atomic-bomb.js"
+    "build": "parcel build atomic-bomb.js",
+    "prepublishOnly": "npm run build"
   },
   "prettier": {
     "singleQuote": true,
