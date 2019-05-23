@@ -3,9 +3,9 @@
 ## Installing
 
 ```sh
-  npm install --save @inloco/atomic-bomb
+  npm install --save @in-loco/atomic-bomb
   #or
-  yarn add @inloco/atomic-bomb
+  yarn add @in-loco/atomic-bomb
 ```
 
 ### Release
