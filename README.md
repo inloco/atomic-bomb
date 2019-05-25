@@ -8,7 +8,12 @@
   yarn add @inloco/atomic-bomb
 ```
 
-### Release
+We highly recommend this VS Code plugin. It auto-completes `atomic-bomb` css rules.
+
+[IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
+
+
+## Release
 
 To release, follow these steps (let's pretend we're releasing `1.2.3`):
 
