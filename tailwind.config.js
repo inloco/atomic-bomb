@@ -97,6 +97,7 @@ module.exports = {
     },
 
     backgroundColor: theme => ({
+      transparent: 'transparent',
       white: theme('colors').white,
       gray: { 50: theme('colors').gray['50'] }
     }),
@@ -133,6 +134,7 @@ module.exports = {
     },
     borderWidth: {
       default: '1px',
+      '1': '1',
       '0': '0'
     },
     boxShadow: {
