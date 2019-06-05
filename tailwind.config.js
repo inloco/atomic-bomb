@@ -1,4 +1,5 @@
-var _ = require('lodash')
+const _ = require('lodash')
+const Color = require('color')
 
 module.exports = {
   prefix: '',
@@ -6,6 +7,7 @@ module.exports = {
   separator: ':',
   theme: {
     screens: {
+      md: '768px',
       lg: '1024px'
     },
     colors: {
@@ -82,7 +84,8 @@ module.exports = {
         700: '#AB5B00',
         800: '#853800',
         900: '#6E2E00'
-      }
+      },
+      purple: '#D18ECF'
     },
     spacing: {
       '0': '0',
@@ -99,10 +102,36 @@ module.exports = {
     backgroundColor: theme => ({
       transparent: 'transparent',
       white: theme('colors').white,
-      gray: { 50: theme('colors').gray['50'] }
+      gray: {
+        ..._.pick(theme('colors.gray'), ['50', '800']),
+        '900-8': Color(theme('colors').gray['900'])
+          .alpha(0.08)
+          .string(),
+        '900-16': Color(theme('colors').gray['900'])
+          .alpha(0.16)
+          .string(),
+        '900-24': Color(theme('colors').gray['900'])
+          .alpha(0.24)
+          .string(),
+        '900-32': Color(theme('colors').gray['900'])
+          .alpha(0.32)
+          .string()
+      },
+      wave: {
+        ..._.pick(theme('colors.wave'), ['50', '500', '600', '700']),
+        '500-8': Color(theme('colors').wave['500'])
+          .alpha(0.08)
+          .string(),
+        '500-16': Color(theme('colors').wave['500'])
+          .alpha(0.16)
+          .string()
+      },
+      space: _.pick(theme('colors.space'), ['100', '200', '300']),
+      green: _.pick(theme('colors.green'), ['50']),
+      yellow: _.pick(theme('colors.yellow'), ['50']),
+      magenta: _.pick(theme('colors.magenta'), ['50']),
+      purple: theme('colors.purple')
     }),
-
-    //TODO: yellow-50, green-50, red-50, space-900
 
     backgroundPosition: {
       bottom: 'bottom',
@@ -121,28 +150,40 @@ module.exports = {
       contain: 'contain'
     },
     borderColor: theme => ({
-      //definir
-      ...theme('colors')
+      gray: {
+        '900-8': Color(theme('colors').gray['900'])
+          .alpha(0.08)
+          .string(),
+        '900-16': Color(theme('colors').gray['900'])
+          .alpha(0.16)
+          .string(),
+        '900-24': Color(theme('colors').gray['900'])
+          .alpha(0.24)
+          .string()
+      },
+      wave: _.pick(theme('colors.wave'), ['200', '500']),
+      green: _.pick(theme('colors.green'), ['500']),
+      yellow: _.pick(theme('colors.yellow'), ['500']),
+      magenta: _.pick(theme('colors.magenta'), ['500'])
     }),
     borderRadius: {
-      //definir
-      none: '0',
-      sm: '0.125rem',
-      default: '0.25rem',
-      lg: '0.5rem',
+      default: '4px',
       full: '9999px'
     },
     borderWidth: {
       default: '1px',
+      '2': '2px',
       '1': '1px',
       '0': '0'
     },
     boxShadow: {
-      200: '0 4px 16px -1px rgba(62, 73, 101, .16)',
-      300: '0 8px 10px -4px rgba(62, 73, 101, .20)',
-      400: '0 16px 24px -6px rgba(62, 73, 101, .20)',
-      500: '0 24px 32px -8px rgba(62, 73, 101, .20)',
+      200: '0 4px 6px 0px rgba(61, 62, 63, .16)',
+      300: '0 8px 10px 0px rgba(61, 62, 63, .16)',
+      400: '0 16px 24px 0px rgba(61, 62, 63, .16)',
+      500: '0 24px 32px 0px rgba(61, 62, 63, .16)',
       default: '0 4px 16px -1px rgba(62, 73, 101, .16)',
+      'field-hover': 'inset 0 0px 0px 2px rgba(61, 62, 63, .16)',
+      'field-focus': '0 0px 0px 1px rgba(61, 62, 63, .48)',
       none: 'none'
     },
     container: {},
@@ -173,17 +214,16 @@ module.exports = {
       default: '1'
     },
     fontFamily: {
-      sans: ['Roboto', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif']
+      default: ['neue-haas-grotesk-text', 'sans-serif'],
+      display: ['neue-haas-grotesk-display', 'sans-serif']
     },
     fontSize: {
-      //12, 14, 20, 24 OBS: Redefinir (pendente)
       sm: '12px',
       base: '14px',
-      lg: '20',
-      xl: '24'
+      lg: '20px',
+      xl: '24px'
     },
     fontWeight: {
-      light: '300',
       normal: '400',
       medium: '500'
     },
@@ -198,17 +238,16 @@ module.exports = {
       auto: 'auto'
     },
     letterSpacing: {
-      //.3 , 0
-      normal: '0'
+      normal: '0',
+      h2: '0.6',
+      h1: '0.72'
     },
     lineHeight: {
       // 12/14, 14/20, 20/24, 24/28
-      none: '1',
-      tight: '1.25',
-      snug: '1.375',
-      normal: '1.5',
-      relaxed: '1.625',
-      loose: '2'
+      '14': '14px',
+      '20': '20px',
+      '24': '24px',
+      '28': '28px'
     },
     listStyleType: {
       none: 'none',
@@ -258,11 +297,14 @@ module.exports = {
       top: 'top'
     },
     opacity: {
-      //0, 0.08, 0.1, 0.2, 0.25, .3, .33, .5, .6, .66, .75, .8, .88, 1 (revisitar)
       '0': '0',
-      '25': '0.25',
-      '50': '0.5',
-      '75': '0.75',
+      '8': '0.08',
+      '16': '0.16',
+      '24': '0.24',
+      '32': '0.32',
+      '48': '0.48',
+      '64': '0.64',
+      '80': '0.80',
       '100': '1'
     },
     order: {
@@ -287,7 +329,13 @@ module.exports = {
       current: 'currentColor'
     },
     textColor: theme => ({
-      gray: _.pick(theme('colors.gray'), ['800', '900'])
+      white: theme('colors.white'),
+      gray: _.pick(theme('colors.gray'), ['700', '800', '900']),
+      wave: _.pick(theme('colors.wave'), ['500', '600', '700', '800']),
+      green: _.pick(theme('colors.green'), ['500']),
+      magenta: _.pick(theme('colors.magenta'), ['500', '600']),
+      yellow: _.pick(theme('colors.yellow'), ['500', '700']),
+      space: _.pick(theme('colors.space'), ['600', '900'])
     }),
     width: theme => ({
       auto: 'auto',
