@@ -15,7 +15,7 @@ jobs:
       - checkout
       - *restore_yarn_cache
       - run:
-          name: Build App
+          name: Build app
           command: yarn build
       - persist_to_workspace:
           root: ~/project
