@@ -7,4 +7,4 @@ bucket="$2"
 
 find $folder -type f -exec gzip "{}" \; -exec mv "{}.gz" "{}" \;
 
-aws s3 sync $folder s3://$bucket --exclude "*.*" --include "*.js" --include "*.css" --acl public-read --cache-control "max-age=$oneDay" --content-encoding "gzip"
+aws s3 sync $folder s3://$bucket --exclude "*.*" --include "*.js" --include "*.css" --cache-control "max-age=$oneDay" --content-encoding "gzip"
