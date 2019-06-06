@@ -2,18 +2,25 @@ version: 2
 
 aliases:
   - &node
-    docker:
-      - image: circleci/node:12.2.0-stretch
   - &restore_yarn_cache
-    restore_cache:
-      name: Restore Yarn Package Cache
-      key: yarn-packages-{{ checksum "yarn.lock" }}
 jobs:
   build:
-    <<: *node
+    docker:
+      - image: circleci/node:12.2.0-stretch
     steps:
       - checkout
-      - *restore_yarn_cache
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+            - node_modules
       - run:
           name: Build app
           command: yarn build
