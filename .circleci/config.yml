@@ -57,6 +57,7 @@ workflows:
       - deploy:
           requires:
             - build
+          context: app-atomic-bomb
           filters:
             branches:
               only: chore/cdn
