@@ -1,0 +1,55 @@
+version: 2
+
+aliases:
+  - &node
+    docker:
+      - image: circleci/node:12.2.0-stretch
+  - &restore_yarn_cache
+    restore_cache:
+      name: Restore Yarn Package Cache
+      key: yarn-packages-{{ checksum "yarn.lock" }}
+jobs:
+  build:
+    <<: *node
+    steps:
+      - checkout
+      - *restore_yarn_cache
+      - run:
+          name: Build App
+          command: yarn build
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - dist
+            - scripts/uploadToS3.sh
+            - scripts/invalidateCache.sh
+  deploy:
+    docker:
+      - image: circleci/python:3.6.6-jessie-node
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+      - run:
+          name: Deploy
+          command: ./scripts/uploadToS3.sh ./build atomic-bomb.assets
+      - run:
+          name: Invalidate cache
+          command: ./scripts/invalidateCache.sh da6r4hu3mwqhj
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: chore/cdn
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: chore/cdn
