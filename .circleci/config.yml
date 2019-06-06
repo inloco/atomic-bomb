@@ -41,7 +41,7 @@ jobs:
           command: sudo pip install awscli
       - run:
           name: Deploy
-          command: ./scripts/uploadToS3.sh ./build atomic-bomb.assets
+          command: ./scripts/uploadToS3.sh ./dist atomic-bomb.assets
       - run:
           name: Invalidate cache
           command: ./scripts/invalidateCache.sh da6r4hu3mwqhj
