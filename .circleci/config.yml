@@ -44,7 +44,7 @@ jobs:
           command: ./scripts/uploadToS3.sh ./dist atomic-bomb.assets
       - run:
           name: Invalidate cache
-          command: ./scripts/invalidateCache.sh da6r4hu3mwqhj
+          command: ./scripts/invalidateCache.sh ERPGQSSULFILV
 
 workflows:
   version: 2
