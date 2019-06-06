@@ -53,11 +53,11 @@ workflows:
       - build:
           filters:
             branches:
-              only: chore/cdn
+              only: master
       - deploy:
           requires:
             - build
           context: app-atomic-bomb
           filters:
             branches:
-              only: chore/cdn
+              only: master
