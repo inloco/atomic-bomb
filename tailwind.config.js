@@ -124,6 +124,9 @@ module.exports = {
           .string(),
         '500-16': Color(theme('colors').wave['500'])
           .alpha(0.16)
+          .string(),
+        '500-40': Color(theme('colors').wave['500']) // Disabled button
+          .alpha(0.4)
           .string()
       },
       space: _.pick(theme('colors.space'), ['100', '200', '300']),
@@ -385,7 +388,7 @@ module.exports = {
     alignSelf: ['responsive'],
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
@@ -434,7 +437,7 @@ module.exports = {
     stroke: ['responsive'],
     tableLayout: ['responsive'],
     textAlign: ['responsive'],
-    textColor: ['responsive', 'hover', 'focus'],
+    textColor: ['responsive', 'hover', 'focus', 'active'],
     textDecoration: ['responsive', 'hover', 'focus'],
     textTransform: ['responsive'],
     userSelect: ['responsive'],
