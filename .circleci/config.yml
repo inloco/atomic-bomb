@@ -1,8 +1,5 @@
 version: 2
 
-aliases:
-  - &node
-  - &restore_yarn_cache
 jobs:
   build:
     docker:
