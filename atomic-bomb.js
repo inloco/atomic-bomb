@@ -1,1 +1,1 @@
-import './atomic-bomb.css'
+import './css/atomic-bomb.css'

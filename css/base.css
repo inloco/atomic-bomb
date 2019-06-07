@@ -1,0 +1,19 @@
+h1 {
+  @apply font-display tracking-h1 text-xl;
+}
+
+h2 {
+  @apply font-display tracking-h2 text-lg;
+}
+
+a {
+  @apply text-wave-600;
+}
+
+a:hover {
+  @apply text-wave-700;
+}
+
+a:active {
+  @apply text-wave-800;
+}

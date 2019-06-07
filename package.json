@@ -2,7 +2,9 @@
   "name": "@inloco/atomic-bomb",
   "version": "1.0.0-beta.4",
   "files": [
-    "dist"
+    "dist",
+    "css",
+    "src/tailwind.config.js"
   ],
   "main": "./dist/atomic-bomb.js",
   "description": "In Loco Atomic CSS",
