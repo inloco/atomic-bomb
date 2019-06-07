@@ -1,0 +1,60 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:12.2.0-stretch
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+            - node_modules
+      - run:
+          name: Build app
+          command: yarn build
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - dist
+            - scripts/uploadToS3.sh
+            - scripts/invalidateCache.sh
+  deploy:
+    docker:
+      - image: circleci/python:3.6.6-jessie-node
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+      - run:
+          name: Deploy
+          command: ./scripts/uploadToS3.sh ./dist atomic-bomb.assets
+      - run:
+          name: Invalidate cache
+          command: ./scripts/invalidateCache.sh ERPGQSSULFILV
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+      - deploy:
+          requires:
+            - build
+          context: app-atomic-bomb
+          filters:
+            branches:
+              only: master
