@@ -12,32 +12,14 @@ We highly recommend this VS Code plugin. It auto-completes `atomic-bomb` css rul
 
 [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
 
-
 ## Release
 
-To release, follow these steps (let's pretend we're releasing `1.2.3`):
+To release, follow these steps:
 
-1. Update the version in `package.json` to the new one (in this case `1.2.3`).
-2. Create a commit with the version number as the title: `v1.2.3`:
-
-```sh
-git commit -m v1.2.3
-```
-
-3. Create a new git tag:
-
-```sh
-git tag -a v1.2.3 -m v1.2.3
-```
-
-4. Push the commit and the tag to master:
+1. Run `yarn publish`.
+2. Type the version to be released.
+3. Push the generated commit and the tag to master:
 
 ```sh
 git push origin master --tags
-```
-
-5. Publish to npm (you'll need to be logged in and have permission on **In Loco** organization):
-
-```sh
-npm publish --access public
 ```
