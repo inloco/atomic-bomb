@@ -242,8 +242,8 @@ module.exports = {
     },
     letterSpacing: {
       normal: '0',
-      h2: '0.6',
-      h1: '0.72'
+      h2: '0.6px',
+      h1: '0.72px'
     },
     lineHeight: {
       // 12/14, 14/20, 20/24, 24/28
