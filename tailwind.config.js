@@ -67,7 +67,7 @@ module.exports = {
         200: '#A4DAEB',
         300: '#82C6D9',
         400: '#5AB5CC',
-        500: '#0096B4',
+        500: '#0096B4', // RGB: 0, 150, 180
         600: '#017E9A',
         700: '#01667D',
         800: '#004F61',
@@ -106,6 +106,9 @@ module.exports = {
         ..._.pick(theme('colors.gray'), ['50', '800']),
         '900-8': Color(theme('colors').gray['900'])
           .alpha(0.08)
+          .string(),
+        '900-12': Color(theme('colors').gray['900'])
+          .alpha(0.12)
           .string(),
         '900-16': Color(theme('colors').gray['900'])
           .alpha(0.16)
