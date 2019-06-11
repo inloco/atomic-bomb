@@ -4,7 +4,7 @@
   "files": [
     "dist",
     "css",
-    "src/tailwind.config.js"
+    "tailwind.config.js"
   ],
   "main": "./dist/atomic-bomb.js",
   "description": "In Loco Atomic CSS",
