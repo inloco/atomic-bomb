@@ -30,7 +30,7 @@ module.exports = {
         500: '#7DBB4E',
         800: '#448017'
       },
-      red: {
+      magenta: {
         50: '#FDF0F2',
         500: '#DE425B',
         600: '#C92C46'
@@ -114,7 +114,7 @@ module.exports = {
       space: _.pick(theme('colors.space'), ['100', '200', '300']),
       green: _.pick(theme('colors.green'), ['50']),
       yellow: _.pick(theme('colors.yellow'), ['50']),
-      red: _.pick(theme('colors.red'), ['50']),
+      magenta: _.pick(theme('colors.magenta'), ['50']),
       purple: theme('colors.purple')
     }),
 
@@ -149,7 +149,7 @@ module.exports = {
       wave: _.pick(theme('colors.wave'), ['200', '500']),
       green: _.pick(theme('colors.green'), ['500']),
       yellow: _.pick(theme('colors.yellow'), ['500']),
-      red: _.pick(theme('colors.red'), ['500'])
+      magenta: _.pick(theme('colors.magenta'), ['500'])
     }),
     borderRadius: {
       default: '4px',
@@ -319,7 +319,7 @@ module.exports = {
       gray: _.pick(theme('colors.gray'), ['700', '800', '900']),
       wave: _.pick(theme('colors.wave'), ['500', '600', '700', '800']),
       green: _.pick(theme('colors.green'), ['500']),
-      red: _.pick(theme('colors.red'), ['500', '600']),
+      magenta: _.pick(theme('colors.magenta'), ['500', '600']),
       yellow: _.pick(theme('colors.yellow'), ['500', '700']),
       space: _.pick(theme('colors.space'), ['600', '900'])
     }),
