@@ -152,6 +152,7 @@ module.exports = {
       magenta: _.pick(theme('colors.magenta'), ['500'])
     }),
     borderRadius: {
+      none: '0',
       default: '4px',
       full: '9999px'
     },
