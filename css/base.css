@@ -3,11 +3,11 @@ body {
 }
 
 h1 {
-  @apply font-display tracking-h1 text-xl;
+  @apply font-display tracking-h1 text-xl text-gray-800 font-light;
 }
 
 h2 {
-  @apply font-display tracking-h2 text-lg;
+  @apply font-display tracking-h2 text-lg text-gray-800 font-light;
 }
 
 a {
