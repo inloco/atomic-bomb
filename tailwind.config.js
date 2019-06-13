@@ -83,6 +83,9 @@ module.exports = {
       white: theme('colors').white,
       gray: {
         ..._.pick(theme('colors.gray'), ['50', '800']),
+        '900-4': Color(theme('colors').gray['900'])
+          .alpha(0.04)
+          .string(),
         '900-8': Color(theme('colors').gray['900'])
           .alpha(0.08)
           .string(),
@@ -163,6 +166,7 @@ module.exports = {
       '0': '0'
     },
     boxShadow: {
+      100: '0 0 0 1px rgba(62, 73, 101, 0.15)',
       200: '0 4px 6px 0px rgba(61, 62, 63, .16)',
       300: '0 8px 10px 0px rgba(61, 62, 63, .16)',
       400: '0 16px 24px 0px rgba(61, 62, 63, .16)',
