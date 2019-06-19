@@ -1,15 +1,15 @@
 @import './font.css';
 
 body {
-  @apply font-default text-gray-900;
+  @apply font-default text-gray-900 leading-20 text-base;
 }
 
 h1 {
-  @apply font-display tracking-h1 text-xl text-gray-800 font-light;
+  @apply font-display tracking-h1 text-xl text-gray-800 font-light leading-28;
 }
 
 h2 {
-  @apply font-display tracking-h2 text-lg text-gray-800 font-light;
+  @apply font-display tracking-h2 text-lg text-gray-800 font-light leading-24;
 }
 
 a {
@@ -22,4 +22,12 @@ a:hover {
 
 a:active {
   @apply text-wave-800;
+}
+
+::placeholder {
+  @apply text-gray-800 opacity-100;
+}
+
+label {
+  @apply text-gray-800 text-sm leading-14;
 }
