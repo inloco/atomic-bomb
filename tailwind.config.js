@@ -214,7 +214,6 @@ module.exports = {
       xl: '24px'
     },
     fontWeight: {
-      light: '300',
       normal: '400',
       medium: '500'
     },
