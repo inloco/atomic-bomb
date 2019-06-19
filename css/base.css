@@ -1,5 +1,7 @@
+@import './font.css';
+
 body {
-  @apply text-gray-900;
+  @apply font-default text-gray-900;
 }
 
 h1 {
