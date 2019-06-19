@@ -1,7 +1,7 @@
 @import './font.css';
 
 body {
-  @apply font-default text-gray-900 leading-20;
+  @apply font-default text-gray-900 leading-20 text-base;
 }
 
 h1 {
@@ -25,7 +25,7 @@ a:active {
 }
 
 ::placeholder {
-  @apply text-gray-800 text-base opacity-100;
+  @apply text-gray-800 opacity-100;
 }
 
 label {
