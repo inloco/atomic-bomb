@@ -82,7 +82,7 @@ module.exports = {
       transparent: 'transparent',
       white: theme('colors').white,
       gray: {
-        ..._.pick(theme('colors.gray'), ['50', '800']),
+        ..._.pick(theme('colors.gray'), ['50', '100', '800']),
         '900-4': Color(theme('colors').gray['900'])
           .alpha(0.04)
           .string(),
@@ -174,6 +174,10 @@ module.exports = {
       default: '0 4px 16px -1px rgba(62, 73, 101, .16)',
       'field-hover': 'inset 0 0px 0px 1px rgba(61, 62, 63, .16)',
       'field-focus': '0 0px 0px 1px rgba(61, 62, 63, .48)',
+      'error-field-hover': '0 0px 0px 1px rgba(201, 44, 70, .16)',
+      'error-field-focus': '0 0px 0px 1px rgba(201, 44, 70, .48)',
+      'warning-field-hover': '0 0px 0px 1px rgba(176, 88, 0, .16)',
+      'warning-field-focus': '0 0px 0px 1px rgba(176, 88, 0, .48)',
       none: 'none'
     },
     container: {},
