@@ -174,9 +174,9 @@ module.exports = {
       default: '0 4px 16px -1px rgba(62, 73, 101, .16)',
       'field-hover': 'inset 0 0px 0px 1px rgba(61, 62, 63, .16)',
       'field-active': '0 0px 0px 1px rgba(61, 62, 63, .48)',
-      'error-field-hover': '0 0px 0px 1px rgba(201, 44, 70, .16)',
+      'error-field-hover': '0 0px 0px 1px rgba(201, 44, 70, .32)',
       'error-field-active': '0 0px 0px 1px rgba(201, 44, 70, .48)',
-      'warning-field-hover': '0 0px 0px 1px rgba(176, 88, 0, .16)',
+      'warning-field-hover': '0 0px 0px 1px rgba(176, 88, 0, .32)',
       'warning-field-active': '0 0px 0px 1px rgba(176, 88, 0, .48)',
       none: 'none'
     },
